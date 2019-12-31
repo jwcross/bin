@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+if [[ -z $1 ]]; then
+    echo "Usage: xctest [scheme] [target]"
+    exit
+fi
+
+scheme="$1"
+[[ $2 ]] && target="$2" || target="$1"
+
+simulator="platform=iOS Simulator,OS=13.2.2,name=iPhone SE"
+
+xcodebuild \
+    build-for-testing \
+    -scheme "$scheme" \
+    -target "$target" \
+    -destination "$simulator" \
+    -configuration Debug | tee ~/.testOutput.txt
+
+xcodebuild \
+    test-without-building \
+    -scheme "$scheme" \
+    -target "$target" \
+    -destination "$simulator" \
+    -configuration Debug | tee ~/.testOutput.txt
+
