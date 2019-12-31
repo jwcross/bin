@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -e
+
+tip() { echo "- $@"; }
+TODO() { echo "- $@"; }
+section() { echo; echo "$@"; echo "---"; }
+
+section Tips
+tip "Arrows:  Up/down to navigate links, left/right to browse back/forth"
+tip "Enter:   Navigate to highlighted link"
+tip "^a/^e:   Beginning/end of document"
+tip "-/Space: Move up/down one page"
+tip "^p/^n:   Move up/down by 2 lines"
+tip "ok:      Number the links in each document"
+
+section TODOs
+TODO "Private browsing mode"
+

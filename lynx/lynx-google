@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+
+[[ $1 == "--lucky" ]] && query="$2" || query="$1"
+
+encodedQuery=$(echo "$query" | sed -e "s/ /+/g")
+
+if [[ $1 == "--lucky" ]]; then
+    lynx "http://www.google.com/search?q=${encodedQuery}&btnI"
+else
+    lynx "http://www.google.com/search?q=${encodedQuery}"
+fi

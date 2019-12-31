@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+[[ $1 == "--lucky" ]] && query="$2" || query="$@"
+
+# Note: We use DuckDuckGo instead of Google, because Google returns an incredibly frustrating redirect notice
+# https://support.google.com/websearch/thread/15794018?hl=en
+lynx-duckduckgo --lucky "site:stackoverflow.com $query"
