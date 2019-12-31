@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+errorMessage="arg 1: pattern, arg 2: file"
+
+[[ $1 ]] && pattern=$1 || { echo "$errorMessage" && exit; }
+[[ $2 ]] && file=$2 || { echo "$errorMessage" && exit; }
+[[ $3 ]] && before="$3" || before='\n'
+[[ $4 ]] && after="$4" || after='\n'
+
+echo "Debugging:"
+echo "$file"
+#awk -v pattern="$pattern" -v before="$before" -v after="$after" '
+#BEGIN {print pattern; print before; print after}
+#'
+
+#newline="^$"
+#before=$newline
+#after=$newline
+
+#sed -n '/Beginning of block/!b;:a;/End of block/!{$!{N;ba}};{/some_pattern/p}' filename
+#sed -n -i '.bak' "/^$/!b;:a;/^$/!{$!{N;ba}};{/$pattern/p}" $file
+
+#{ if (p==1) { a[NR]=\$0 } };
+#/$pattern/ { f=1 };
+#awk '
+#/^$/ { p=1 };
+#{ if (p==1) { a[NR]=$0 } };
+#/sed/ { f=1 };
+#/^$/ {
+#    p=0;
+#    if (f==1) {
+#        for (i in a) print a[i]
+#    };
+#    f=0;
+#    delete a
+#}
+#' $file
+
+#awk -v var="$variable" 'BEGIN {print var}'
+
+#awk -v pattern="$pattern" -v before="$before" -v after="$after" '/before/ {p=1};
+#{if (p==1) {a[NR]=$0}};
+#    /pattern/ {f=1};
+#    /after/ {p=0; if (f==1) {for (i in a) print a[i]};f=0; delete a}' "$file"
+
+awk -v pattern="$pattern" -v before="$before" -v after="$after" '/before/ { r=""; f=1 } f { r = (r ? r ORS : "") $0 } /end/ { if (f && r ~ /pattern/) print r; f=0 }' $file
+

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+file=~/.messagesToDisplayOnLogin
+
+if [[ $(which gshuf) && -f $file ]]; then
+    message=$(cat $file | grep -v "^$" | grep -v "^#" | gshuf -n 1)
+    echo $message
+    echo
+fi
