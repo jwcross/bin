@@ -1,0 +1,19 @@
+export CLICOLOR=1
+export VISUAL=vim
+export EDITOR=vim
+
+PATH=$PATH:~/bin
+PATH=$PATH:~/bin/bash
+PATH=$PATH:~/bin/fzf
+PATH=$PATH:~/bin/git
+PATH=$PATH:~/bin/github
+PATH=$PATH:~/bin/gitignored
+PATH=$PATH:~/bin/lynx
+PATH=$PATH:~/bin/other
+PATH=$PATH:~/bin/tmux
+PATH=$PATH:~/bin/vim
+PATH=$PATH:~/bin/xcode
+
+source ~/bin/git/git-completion.bash
+
+echoRandomMessageOnLogin
