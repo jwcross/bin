@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ $1 ]]; then
+    vim -o "`fzf -f $1 | head -1`"
+else
+    vim -o "`fzf`"
+fi
