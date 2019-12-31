@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -e
+
+tip() { echo "- $@"; }
+TODO() { echo "- $@"; }
+section() { echo; echo "$@"; echo "---"; }
+
+section Tips
+tip "New session: tmux new -s name"
+
+section TODOs
+TODO "Fill in some TODOs"
+
