@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+pdf="$1"
+png="$2"
+
+if [[ $3 ]]; then
+    maxSize="$3"
+    sips -z "$maxSize" -s format png "$pdf" --out "$png"
+else
+    sips -s format png "$pdf" --out "$png"
+fi
+
