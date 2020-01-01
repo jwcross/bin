@@ -1,1 +1,0 @@
-/Users/joncrossley/dotfiles/git/git-completion.bash
