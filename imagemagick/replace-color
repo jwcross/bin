@@ -1,0 +1,9 @@
+#!/bin/bash 
+
+[[ $1 ]] && filename=$1 || exit
+[[ $2 ]] && color="-opaque $2" || color="$(convert $filename -format '%[pixel:p{0,0}]' info:-)"
+[[ $3 ]] && newcolor="-fill $3" || newcolor="-transparent" # FIIIIGURE OUT
+[[ $4 ]] && fuzz=$4 || fuzz="20"
+[[ $5 ]] && output=$5 || output="output.png"
+
+convert "$filename" -fuzz "$fuzz%" $newcolor $color "$output"

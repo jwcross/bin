@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+find . -name "*.swift" -print0 | xargs -0 wc -l | sort -rn | head

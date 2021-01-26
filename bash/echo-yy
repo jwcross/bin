@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+yy="$(date +"%Y")"
+echo "$yy"

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+[[ -z $1 ]] && echo "Usage: vim-bash-script [-g] filename"
+
+if [[ $1 ]]; then
+    vim "**/*${pattern}*"
+else
+    vim *
+fi

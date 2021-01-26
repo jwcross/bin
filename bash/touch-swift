@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+shebang="#!/usr/bin/swift -suppress-warnings" 
+
+if [[ -f $1 ]]; then
+    exit
+elif [[ $1 ]]; then
+    f="$1" 
+else
+    echo "Usage: touch-swift file"
+    exit
+fi
+
+echo "$shebang" > "$f"
+echo "" >> "$f"
+chmod +x "$f"
+

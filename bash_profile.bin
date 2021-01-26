@@ -7,11 +7,15 @@ PATH=$PATH:~/bin/bash
 PATH=$PATH:~/bin/fzf
 PATH=$PATH:~/bin/git
 PATH=$PATH:~/bin/github
-PATH=$PATH:~/bin/gitignored
+PATH=$PATH:~/bin/imagemagick
+PATH=$PATH:~/bin/lilypond
 PATH=$PATH:~/bin/lynx
+PATH=$PATH:~/bin/macOS
 PATH=$PATH:~/bin/other
 PATH=$PATH:~/bin/tmux
 PATH=$PATH:~/bin/vim
 PATH=$PATH:~/bin/xcode
+
+source ~/bin/gitignored/bash_profile_gitignored.bin
 
 echoRandomMessageOnLogin

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+yymmdd="$(date +"%Y-%m-%d")"
+echo "$yymmdd" # useful to pipe to new operations

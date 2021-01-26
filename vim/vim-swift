@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [[ $1 ]]; then
+    f="$1" 
+else
+    echo "Usage: vim-swift file"
+    exit
+fi
+
+touch-swift "$f"
+vim "$f"
+

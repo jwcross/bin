@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 if [[ $1 ]]; then
-    vim -o "`fzf -f $1 | head -1`"
+    file=`fzf -f $1 | head -1`
 else
-    vim -o "`fzf`"
+    file=`fzf`
 fi
+
+[[ $file ]] && vim -o "$file"

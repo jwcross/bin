@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+convert \
+    -append \
+    -gravity South \
+    -background none \
+    "$@" \
+    out.png
+
+#montage $@ \
+#    -gravity SouthWest \
+#    -geometry +0+0 \
+#    -tile "$#x1" \
+#    out.png

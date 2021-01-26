@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+mmdd="$(date +"%m-%d")"
+echo "$mmdd" # useful to pipe to new operations

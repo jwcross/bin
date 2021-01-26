@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+fail() {
+    echo "$1"
+    exit
+}
+
+[[ $1 ]] && file="$1" || fail "arg1: listOfUrls"
+
+cp "$file" ~/Music/iTunes/iTunes\ Media/Automatically\ Add\ to\ iTunes.localized

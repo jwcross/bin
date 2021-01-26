@@ -5,22 +5,26 @@ if [[ -z $1 ]]; then
     exit
 fi
 
+workspace="Pixelist.xcworkspace"
 scheme="$1"
-[[ $2 ]] && target="$2" || target="$1"
 
-simulator="platform=iOS Simulator,OS=13.2.2,name=iPhone SE"
+simulator="platform=iOS Simulator,name=iPhone 8"
 
 xcodebuild \
     build-for-testing \
+    -workspace "$workspace" \
     -scheme "$scheme" \
-    -target "$target" \
     -destination "$simulator" \
     -configuration Debug | tee ~/.testOutput.txt
 
 xcodebuild \
     test-without-building \
+    -workspace "$workspace" \
     -scheme "$scheme" \
-    -target "$target" \
     -destination "$simulator" \
     -configuration Debug | tee ~/.testOutput.txt
+
+#    -target "$target" \
+#    -scheme "$scheme" \
+#    -target "$target" \
 

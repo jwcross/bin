@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+#src="$1"
+#dst="$2" # TODO: Either move to directory, or rename file
+#
+#move() {
+#  suffix=0
+#  [[ -d "$dst" ]] && dir="$dst/$src" || dir=""
+#  file="${maybeDir}${file}"
+#  while test -e "$file"; do
+#    file="$dst/$src-$((++suffix))"
+#  done
+#  mv -v "$src" "$file"
+#}
+#
+#move "$src" "$dst"
+
+### Tests
+
+# Pending:
+# It can move a local file within directory (rename)
+# It can move a remote file within its directory
+# It can move a remote file to an existing directory

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+[[ $1 ]] && parentDir="$1/" || parentDir=""
+
+yymmdd=`echo-yymmdd`
+dir="${parentDir}${yymmdd}"
+
+mkdir -p "$dir"
+echo "$dir" # useful to pipe to new operations
+
+### Spec
+# Pending:
+# It can create a local directory in the format YYYY-MM-DD
+# It can define a destination directory, e.g. `f ~/parent` to create ~/parent/2020-05-28

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "BROKEN"
+exit
+
 [[ -z $1 ]] && echo "Usage: vim-bash-script [-g] filename"
 [[ $1 == "-g" ]] && file=~/.bin/$2 || file=$1
 

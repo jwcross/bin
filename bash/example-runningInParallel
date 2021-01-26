@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Run two commands in parallel, continue when any of them finishes
+{ sleep 1; echo "first completed"; } & p1=$!
+{ sleep 10; echo "FAIL: second should be killed"; } & p2=$!
+wait -n
+pkill -P $$
+
+echo done
